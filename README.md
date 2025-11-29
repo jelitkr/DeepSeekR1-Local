@@ -1,8 +1,9 @@
 # ChatGPT Clone with Backend
+Based on [chatGptClone](https://github.com/albinthekkel/chatGptClone)
 
 ## Introduction
 
-This project is a clone of ChatGPT using the GPT-Neo model from EleutherAI. It consists of a backend built with Node.js and Express, and a text generation server based on Flask. The goal is to demonstrate technical and collaboration skills in setting up and deploying a text generation service.
+This project is a clone of ChatGPT using the DeepSeek-R1-Distill-Qwen-1.5B model from DeepSeek. It consists of a backend built with Node.js and Express, and a text generation server based on Flask. The goal is to demonstrate technical and collaboration skills in setting up and deploying a text generation service.
 
 ## Requirements
 
@@ -75,16 +76,16 @@ npm test
 
 - **server.js:** Main backend server file using Node.js and Express.
 - **server.test.js:** Test file for the backend server.
-- **serve.py:** Text generation server based on Flask using GPT-Neo.
+- **serve.py:** Text generation server based on Flask using DeepSeek-R1-Distill-Qwen-1.5B model from DeepSeek.
 - **docker-compose.yml:** Configuration file for Docker Compose defining the necessary services.
 
 ### Project Structure
 The `docker-compose.yml` file configures and launches two services:
-- **chatgpt:** Text generation server using GPT-Neo.
+- **chatgpt:** Text generation server using DeepSeek-R1-Distill-Qwen-1.5B model from DeepSeek.
 - **backend:** Backend server that interacts with the text generation server.
 
 ### Environment Variables
-- **MODEL_NAME:** Name of the GPT-Neo model to use. Default is `EleutherAI/gpt-neo-125m`.
+- **MODEL_NAME:** Name of the DeepSeek-R1-Distill-Qwen-1.5B model from DeepSeek model to use. Default is `deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B`.
 
 ### Running with Serveo
 To make the server publicly accessible, use Serveo:
@@ -103,7 +104,7 @@ If you want to contribute to this project, please follow these steps:
 5. Open a Pull Request.
 
 ## Authors
-- [Adrián Ramírez](https://docs.docker.com/get-docker/)
+- [Jelit K Raju](https://github.com/jelitkr)
 - [Albin Thekkel](https://github.com/albinthekkel).
 
 ## License
