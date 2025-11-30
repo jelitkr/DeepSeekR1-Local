@@ -1,8 +1,44 @@
-version: '3.8'
-
 services:
   deepseek:
     build: ./deepseek
+    container_name: deepseek-model
     ports:
       - "5000:5000"
     mem_limit: 9g
+    networks:
+      - chatgpt-network
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:5000/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 60
+      start_period: 30s
+
+  backend:
+    build: ./backend
+    container_name: chatgpt-backend
+    ports:
+      - "3001:3001"
+    depends_on:
+      deepseek:
+        condition: service_healthy
+    environment:
+      - DEEPSEEK_URL=http://deepseek:5000
+    networks:
+      - chatgpt-network
+    restart: on-failure
+
+  ui:
+    build: ./ui
+    container_name: chatgpt-ui
+    ports:
+      - "8080:8080"
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - chatgpt-network
+
+networks:
+  chatgpt-network:
+    driver: bridge

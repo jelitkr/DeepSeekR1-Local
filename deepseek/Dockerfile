@@ -2,10 +2,11 @@ FROM python:3.8-slim
 
 WORKDIR /app
 
-# Install dependencies
+# Install dependencies including curl for healthcheck
 RUN apt-get update && apt-get install -y \
     git \
     wget \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pip packages
@@ -17,7 +18,7 @@ RUN pip install "accelerate>=0.26.0"
 COPY . .
 
 # Set the model name
-ENV MODEL_NAME="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+ENV MODEL_NAME="Qwen/Qwen2.5-0.5B-Instruct"
 
 # Expose port
 EXPOSE 5000

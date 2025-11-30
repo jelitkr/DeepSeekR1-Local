@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-header">
+            <h1>ChatGPT Clone</h1>
+            <p class="subtitle">Powered by GPT-Neo</p>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>Hello! I'm your AI assistant. How can I help you today?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <form id="chatForm">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="userInput" 
+                        placeholder="Type your message here..." 
+                        rows="1"
+                    ></textarea>
+                    <button type="submit" id="sendBtn" class="send-btn">
+                        <span>Send</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <p class="info-text">Connected to backend at <span id="backendUrl">http://localhost:3001</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
